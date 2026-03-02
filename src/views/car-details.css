@@ -1,0 +1,44 @@
+.details-container {
+
+    text-align: center;
+    margin-top: 2.5rem;
+
+}
+
+.details-image {
+
+    width: 31.25rem;
+    height: 18.75rem;
+    object-fit: cover;
+    margin: 1.25rem 0;
+
+}
+
+.back-btn {
+
+    padding: 0.625rem 1.25rem;
+    font-size: 1rem;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+
+}
+
+.car-details {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    min-height: 100vh;
+
+    gap: 1rem;
+
+}
