@@ -1,13 +1,19 @@
+import { Routes } from "react-router-dom";
 
-import './app.css';
-import Cars from './components/Cars';
+import carRoutes from "./routes/CarRoutes";
 
 function App() {
+
   return (
-    <div className="App">
-      <Cars></Cars>
-    </div>
+
+    <Routes>
+
+      {carRoutes}
+
+    </Routes>
+
   );
+
 }
 
 export default App;
