@@ -1,16 +1,10 @@
 import './old-cars.css';
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function OldCars() {
 
-    const cars = [
-        "oldcar.jpg",
-        "oldcar2.jpg",
-        "oldcar3.jpg",
-        "oldcar4.jpg",
-        "oldcar5.jpg",
-        "oldcar6.jpg"
-    ];
+    const oldCars = useSelector((state) => state.cars.oldCars);
 
     return (
 
@@ -20,12 +14,12 @@ function OldCars() {
 
             <div className="old-cars-list">
 
-                {cars.map((car, index) => (
+                {oldCars.map((car) => (
 
-                    <Link key={index} to={`/car/${car}`}>
+                    <Link key={car.id} to={`/car/${car.slug}`}>
 
                         <img
-                            src={car}
+                            src={car.image}
                             alt="car"
                             width={350}
                             height={200}
