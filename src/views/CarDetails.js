@@ -1,25 +1,22 @@
 import { useParams, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "./car-details.css";
-import { getCarBySlug } from "../controllers/CarController";
 
 function CarDetails() {
 
     const { slug } = useParams();
-
     const navigate = useNavigate();
 
-    const car = getCarBySlug(slug);
+    const cars = useSelector((state) => state.cars.cars);
+
+    const car = cars.find((c) => c.slug === slug);
 
     if (!car) {
-
         return <h1>Car not found</h1>;
-
     }
 
     return (
-
         <div className="car-details">
-
             <h1>{car.name}</h1>
 
             <img
@@ -30,16 +27,12 @@ function CarDetails() {
 
             <h2>Price: {car.price}</h2>
             <p>{car.description}</p>
+
             <button onClick={() => navigate("/")}>
-
                 Back
-
             </button>
-
         </div>
-
     );
-
 }
 
 export default CarDetails;

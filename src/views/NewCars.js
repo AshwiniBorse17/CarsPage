@@ -1,8 +1,10 @@
-import cars from "../models/CarModel";
 import './new-cars.css';
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function NewCars() {
+
+    const newCars = useSelector((state) => state.cars.newCars);
 
     return (
 
@@ -12,7 +14,7 @@ function NewCars() {
 
             <div className="new-cars-list">
 
-                {cars.map((car) => (
+                {newCars.map((car) => (
 
                     <Link
                         key={car.id}
@@ -20,15 +22,10 @@ function NewCars() {
                     >
 
                         <img
-
                             src={car.image}
-
                             alt={car.name}
-
                             width={350}
-
                             height={200}
-
                         />
 
                     </Link>
